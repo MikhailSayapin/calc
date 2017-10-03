@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cmath>
 using namespace std;
 int main(int argc, char* argv[])
 {
