@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
         double x, y;
         x = atof(argv[1]);
         y = atof(argv[3]);
-        if (argc == 3) {
+        if (argc == 4) {
             switch (b) {
             case '+': {
                 cout << x << "+" << y << "=" << x + y;
