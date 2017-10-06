@@ -1,102 +1,102 @@
 // ./calc 1 + 2.cpp
 #include <iostream>
-#include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
 using namespace std;
-int main(int argc, char* argv[])
+int main()
 {
-    cout << "z:\t" << argc - 1 << endl;
-    for (int a = 1; a <= argc - 1; a++)
+    int x;
+    int y;
+    char d;
+    cout << "Enter the operation:\n +, -, *, /, &, |, ^ , c, <, >, !, %\n";
+    cin >> d;
+    cout << ("first number\t");
+    cin >> (x);
+    if (d != '!')
     {
-        cout << "argv\t[" << a << "]\t=\t" << argv[a] << endl;
+        cout << ("second number\t");
+        cin >> (y);
     }
+    switch (d)
     {
-        char b;
-        b = argv[2][0];
-        int x, y;
-        x = atoi(argv[1]);
-        y = atoi(argv[3]);
-        if (argc == 4)
+        case '+':
         {
-            switch (b)
-            {
-                case '+':
-                {
-                    cout << x << "+" << y << "=" << x + y;
-                    break;
-                }
-                case '-':
-                {
-                    cout << x << "-" << y << "=" << x - y;
-                    break;
-                }
-                case '*':
-                {
-                    cout << x << "*" << y << "=" << x * y;
-                    break;
-                }
-                case '/':
-                {
-                    if (y == 0)
-                        cout << "err";
-                    else
-                        cout << x << "/" << y << "=" << (double)(x / y);
-                    break;
-                }
-                case '&':
-                {
-                    cout << x << "&" << y << "=" << x && y;
-                    break;
-                }
-                case 'p': /*p - значит возведение в степень. */
-                {
-                    cout << x << "v stepeni" << y << "=" << pow(x, y);
-                    break;
-                }
-                case '^':
-                {
-                    cout << x << "^" << y << "=" << x || y;
-                    break;
-                }
-                case 'c': /* c - значит сравнение. */
-                {
-                    if (x < y)
-                        cout << "x<y";
-                    if (x > y)
-                        cout << "x>y";
-                    else
-                        cout << "x==y";
-                    break;
-                }
-                case '<':
-                {
-                    cout << x << "<\t =" << (x << 1);
-                    break;
-                }
-                case '>':
-                {
-                    cout << x << ">\t =" << (x >> 1);
-                    break;
-                }
-                case '!':
-                {
-                    cout << x << "!\t=" << (!x);
-                    break;
-                }
-                case '%':
-                {
-                    int m;
-                    cout << "enter the module";
-                    cin >> m;
-                    cout << x << "-%" << y << "=" << (x - y) % m;
-                    break;
-                }
-                default:
-                    cout << "err";
-            }
+            cout << x << "+" << y << "=" << x + y;
+            break;
         }
-        else
+        case '-':
+        {
+            cout << x << "-" << y << "=" << x - y;
+            break;
+        }
+        case '*':
+        {
+            cout << x << "*" << y << "=" << x * y;
+            break;
+        }
+        case '/':
+        {
+            if (y == 0)
+                cout << "err: you can't divide by zero";
+            else
+                cout << x << "/" << y << "=" << (double)(x / y);
+            break;
+        }
+        case '&':
+        {
+            cout << x << "&" << y << "=" << x && y;
+            break;
+        }
+        case '^':
+        {
+            cout << x << "^" << y << "=" << pow(x, y);
+            break;
+        }
+        case '|':
+        {
+            cout << x << "|" << y << "=" << x || y;
+            break;
+        }
+        case 'c': /* c - значит сравнение. */
+        {
+            if (x < y)
+                cout << "x<y";
+            if (x > y)
+                cout << "x>y";
+            else
+                cout << "x==y";
+            break;
+        }
+        case '<':
+        {
+            if (y >= 0)
+                cout << x << "<" << y << "=" << (x << y);
+            else
+                cout << "err";
+            break;
+        }
+        case '>':
+        {
+            if (y >= 0)
+                cout << x << ">" << y << "=" << (x >> y);
+            else
+                cout << "err";
+            break;
+        }
+        case '!':
+        {
+            cout << x << "!\t=" << (!x);
+            break;
+        }
+        case '%':
+        {
+            int m;
+            cout << "enter the module";
+            cin >> m;
+            cout << x << "-%" << y << "=" << (x - y) % m;
+            break;
+        }
+        default:
             cout << "err";
     }
     return 0;
