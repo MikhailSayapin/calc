@@ -46,7 +46,7 @@ int main()
             }
             case '&':
             {
-                cout << x << "&" << y << "=" << x && y;
+                cout << x << "&" << y << "=" << x & y;
                 break;
             }
             case '^':
@@ -56,7 +56,7 @@ int main()
             }
             case '|':
             {
-                cout << x << "|" << y << "=" << x || y;
+                cout << x << "|" << y << "=" << x | y;
                 break;
             }
             case 'c': /* c - значит сравнение. */
